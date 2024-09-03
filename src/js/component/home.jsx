@@ -1,24 +1,21 @@
 import React from "react";
+import ImgCard from "./imgCard.jsx";
+import CounterCard from "./counterCard.jsx";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-const Home = () => {
+const Home = (props) => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container-fluid bg-black mx-2 mt-2 row px-5" style={{height: 200}}>
+			<div className="col-2">
+				<ImgCard />
+			</div>
+			<div className="col-10 ">
+				<div className="row mt-1">
+					 <CounterCard wholeTime = {props.time}/>;
+					
+				</div>
+			</div>
 		</div>
 	);
 };
